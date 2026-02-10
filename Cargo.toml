@@ -1,0 +1,22 @@
+[package]
+name = "vectcut-skills"
+version = "0.1.0"
+edition = "2021"
+description = "VectCut API CLI - 自动化剪映视频编辑工具"
+authors = ["Your Name <your.email@example.com>"]
+
+[dependencies]
+# HTTP 客户端
+reqwest = { version = "0.12", features = ["json"] }
+# 异步运行时
+tokio = { version = "1.40", features = ["full"] }
+# CLI 参数解析
+clap = { version = "4.5", features = ["derive"] }
+# 序列化/反序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# 错误处理
+anyhow = "1.0"
+# 日志
+tracing = "0.1"
+tracing-subscriber = "0.3"
