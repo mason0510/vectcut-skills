@@ -1,6 +1,13 @@
-# VectCut Skills - Rust CLI for VectCutAPI
+# VectCut Skills
 
-> 用 Rust 封装的剪映自动化工具，通过 VectCutAPI 控制 CapCut/剪映草稿
+[![Crates.io](https://img.shields.io/crates/v/vectcut-skills)](https://crates.io/crates/vectcut-skills)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Rust](https://img.shields.io/badge/rust-1.80%2B-orange.svg)](https://www.rust-lang.org/)
+[![GitHub Stars](https://img.shields.io/github/stars/mason0510/vectcut-skills?style=social)](https://github.com/mason0510/vectcut-skills)
+
+> 🦀 Rust CLI 工具 - 通过 VectCutAPI 自动化 CapCut/剪映视频编辑
+
+[English](./README_EN.md) | 简体中文
 
 ## 📦 项目概述
 
@@ -132,14 +139,17 @@ impl VectCutClient {
 
 ## 📝 许可证
 
-本项目采用 Apache License 2.0 许可证。
+本项目采用 [MIT License](LICENSE) 开源协议。
 
-VectCutAPI 也是 Apache 2.0 许可证，可免费用于商业用途。
+## 🤝 贡献
+
+欢迎贡献代码！请查看 [贡献指南](CONTRIBUTING.md)。
 
 ## 🔗 相关资源
 
 - [VectCutAPI GitHub](https://github.com/sun-guannan/VectCutAPI)
-- [剪映草稿格式分析](https://github.com/sun-guannan/VectCutAPI/blob/main/docs/draft_format.md)
+- [CapCut/剪映官网](https://www.capcut.com/)
+- [Rust 官方文档](https://www.rust-lang.org/docs)
 
 ## ⚠️ 注意事项
 

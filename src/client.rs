@@ -24,9 +24,14 @@ impl VectCutClient {
         }
     }
 
-    /// 创建默认客户端（localhost:9001）
-    pub fn default() -> Self {
-        Self::new("http://127.0.0.1:9001")
+    /// 获取 draft_id，如果未创建则返回错误
+    ///
+    /// # Errors
+    /// 如果尚未创建草稿，返回错误
+    fn get_draft_id(&self) -> Result<&String> {
+        self.draft_id
+            .as_ref()
+            .ok_or_else(|| anyhow!("未创建草稿，请先调用 create_draft() 方法"))
     }
 
     /// 创建新草稿
@@ -80,7 +85,7 @@ impl VectCutClient {
         end: f64,
         volume: f64,
     ) -> Result<()> {
-        let draft_id = self.draft_id.as_ref().ok_or(anyhow!("未创建草稿"))?;
+        let draft_id = self.get_draft_id()?;
 
         #[derive(Serialize)]
         struct AddVideoRequest<'a> {
@@ -118,7 +123,7 @@ impl VectCutClient {
         start: f64,
         end: f64,
     ) -> Result<()> {
-        let draft_id = self.draft_id.as_ref().ok_or(anyhow!("未创建草稿"))?;
+        let draft_id = self.get_draft_id()?;
 
         #[derive(Serialize)]
         struct AddTextRequest<'a> {
@@ -146,7 +151,7 @@ impl VectCutClient {
     ///
     /// 生成剪映可导入的草稿文件
     pub async fn save_draft(&self) -> Result<String> {
-        let draft_id = self.draft_id.as_ref().ok_or(anyhow!("未创建草稿"))?;
+        let draft_id = self.get_draft_id()?;
 
         #[derive(Serialize)]
         struct SaveDraftRequest<'a> {

@@ -2,8 +2,18 @@
 name = "vectcut-skills"
 version = "0.1.0"
 edition = "2021"
-description = "VectCut API CLI - 自动化剪映视频编辑工具"
-authors = ["Your Name <your.email@example.com>"]
+description = "Rust CLI tool for automating CapCut/剪映 video editing via VectCutAPI"
+authors = ["vectcut-skills contributors"]
+license = "MIT"
+repository = "https://github.com/mason0510/vectcut-skills"
+homepage = "https://github.com/mason0510/vectcut-skills"
+readme = "README.md"
+keywords = ["cli", "video-editing", "automation", "capcut", "jianying"]
+categories = ["command-line-utilities", "multimedia"]
+
+[[bin]]
+name = "vectcut"
+path = "src/main.rs"
 
 [dependencies]
 # HTTP 客户端
